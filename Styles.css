@@ -1,1 +1,62 @@
+body {
+    background: white;
+    color: rgb(250, 250, 250);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+/* Header */
+
+header {
+    background-color: pink;
+    
+    height: 40%;
+    padding: 20px;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 40px;
+    color: rgb(250, 250, 250)
+}
+
+header a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(250, 250, 250);
+}
+
+header .logo a {
+    background-image: url(Images/Logo/Logo\ Text\ white.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 75px;
+    position: relative;
+    text-indent: -9999999999px;
+    top: -20px;
+    width: 200px;
+
+
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin: 0px 10px;
+}
+
+/* Header Rules */
+
+/* @media screen and (max-width: 715px) {
+    header .logo {
+
+    }
+} */
