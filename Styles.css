@@ -60,3 +60,32 @@ nav li {
 
     }
 } */
+
+/* Features */
+
+.features {
+    color: rgb(32, 32, 32);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.features figure {
+    margin: auto;
+    padding: 2%;
+    text-align: center;
+    text-transform: capitalize;
+    width: 250px;
+}
+
+.features figure img {
+    border: 1%;
+    border-radius: 50%;
+    width: 250px;
+}
+
+.features figcaption {
+    margin-top: 7px;
+}
+
