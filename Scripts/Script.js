@@ -41,3 +41,4 @@ document.querySelectorAll('#JahresarbeitText div').forEach(section => {
       });
   }
 });
+const filename = id.replace(/[^a-z0-9]/gi, '-');
