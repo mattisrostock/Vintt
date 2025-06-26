@@ -1,1 +1,161 @@
-Die Arbeit an meiner eigenen Website war für mich ein spannender und lehrreicher Prozess, bei dem ich viel Neues dazugelernt habe. Am Anfang stand natürlich die Idee: Ich wusste, dass ich eine Website selbst programmieren möchte, aber noch nicht genau, was sie beinhalten sollte oder wie sie am Ende aussehen würde. Also begann ich erst einmal mit dem Grundaufbau in HTML - dem „Gerüst“ der Seite. Ich habe einfache Elemente wie Überschriften, Texte und Bilder eingefügt, um ein erstes Layout zu testen. Danach habe ich mich mit CSS beschäftigt, um das Design meiner Website zu gestalten. Dabei ging es vor allem um Farben, Schriftarten, Abstände und die Platzierung der einzelnen Bereiche. Es war manchmal gar nicht so einfach, alles so hinzubekommen, wie ich es mir vorgestellt hatte. Ich musste oft Dinge ausprobieren, wieder ändern oder mich online nach Lösungen umsehen. Gerade das Feintuning beim Design hat viel Zeit in Anspruch genommen, aber es hat mir auch Spaß gemacht, eigene Entscheidungen zu treffen und kreativ zu sein. An einigen Stellen habe ich auch mit ein bisschen JavaScript gearbeitet, um einfache Funktionen einzubauen, zum Beispiel kleine visuelle Effekte oder interaktive Elemente. Auch wenn ich damit noch nicht so viel Erfahrung habe, wollte ich zumindest ausprobieren, wie man eine statische Seite etwas lebendiger gestalten kann. Insgesamt war der Entstehungsprozess der Website nicht nur technisch, sondern auch gestalterisch eine Herausforderung. Ich habe gelernt, wie wichtig Planung ist, aber auch, dass man manchmal flexibel bleiben muss, wenn eine Idee nicht so funktioniert, wie man es sich vorgestellt hat.
+Nachdem ich wusste wie sie heißen soll und was auf die Webseite kommt, konnte ich mit dem Programmieren beginnen, doch ich hatte so gut wie keine Ahnung, wie man eine Webseite programmiert. Ich hatte vor langer Zeit mal einen Javascript Kurs angefangen, an welchen ich mich auch nur noch ganz grob erinnern konnte. Also musste ich erst mal lernen, wie man eine Webseite Programmiert. Also suchte ich mir einen Kurs auf YouTube raus, der Kurs heißt:“Web Development Tutorials For Beginners” vom Kanal “LearnCode.academy”. Der Kurs begann mit HTML (Hyper Text Markup Language). Mit HTML baut man die allgemeine Webseite. Noch keine Gestaltung, noch keine Funktionen, nur die Grundbausteine.
+
+Hier sind auch ein Paar Notizen welche ich mir zu HTML gemacht habe:
+
+HTML Tags:
+1. <!DOCTYPE html>
+    definiert den Dokumententyp
+2. <html><html/>
+    Am anfang und ende
+3. <head><head/>
+    Im head tag steht alles ÜBER das Dokument
+4. <body></body>
+    Im body steht alles was auf der Webseite ist
+5. <title>[titel]</title>
+    steht im head und ist der Name des "Tabs"
+6. <h1></h1>-<h6></h6>
+    Überschriften auf der Website
+        h1: Überschrift für die Gesamte Website
+        h2: Abschnitt Überschriften
+        h3: Überschriften innerhalb von h2
+        usw..
+7. <p></p>
+    Text Paragraph
+8. <br/>
+    im p tag, macht ein "enter"
+9. <strong></strong>
+    im p Tag, macht den Text bold
+10. <em></em>
+    im p tag, macht den Text cursiv
+11. <button></button>
+    ein Knopf
+12. <ul></ul>
+    Bulletpoint liste
+13. <ol></ol>
+    numerierte liste
+14. <li></li>
+    listen inhalt (in ul/ol)
+
+
+15. <div></div>
+    content block
+        div tags:
+        16. <header></header>
+            Kopfzeile
+        17.<nav></nav>
+            Navigation
+        18. <section></section>
+            sectionen
+        19. <footer></footer>
+            fußzeile
+
+
+20. <a></a>
+    ein link zu einer anderen seite
+        <a href="index.html">link</a>
+21. <style></style>
+    im Style tag steht der Code in CSS worin tags wie header beschrieben werden durch Attribute
+
+Nach HTML beschäftigte ich mich mit CSS. Es sorgt für die Gestaltung der gesamten Webseite. Dadurch sieht die Webseite gut aus. Ich hatte so meine Probleme mit CSS, es ist recht unverständlich und nichts erklärt dir wirklich, warum dein Code nicht wirklich funktioniert hat, außerdem gibt es so viele Attribute, welche man nicht alle kennen kann. Die Webseite muss außerdem nicht nur auf Computern gut aussehen, sondern auch auf Telefonen und allen anderen Geräten mit Internetzugang also muss man auch noch extra regeln erstellen, für wenn die Bildschirmbreite kleiner als z.B. 610 Pixel ist. Doch am ende, habe ich es doch ganz gut hinbekommen. Ich hab mir auch zu CSS ein paar Notizen gemacht.
+
+1. <style></style> (in HTML Dokument im head)
+    -in den tag kommt alles was die website gestaltet
+    -dinge im style Tag sind in CSS geschrieben
+
+CSS funktioniert wie folgend
+    selector {
+        property: value;
+        property2: value;
+    }
+    selector {
+        property: value;
+    }
+
+z.b.
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, Comic Sans, Helvetica, Times New Roman
+        }
+        h1 {
+            color: red;
+            opacity: 0,5;
+        }
+        h2 {
+            color; rgb(255, 77, 0)
+        }
+    </style>
+
+
+
+
+Propertys und Values:
+1. color:
+        color: red;
+            setzt die farbe auf red
+        color: rgb(255, 77, 0)
+            setzt die farbe auf den rgb wert
+    
+    color setzt die Farbe des ausgewählten auf den wert im value
+
+2. opacity:
+        opacity: 0,5;
+            setzt die Opazität auf 0,5
+        opacity: 0,2;
+            setzt die Opazität auf 0,2
+    
+    opacity setzt die Opazität des ausgewählten auf den wert im value
+
+3. background-color: | background:
+        background-color: rgb(Wert)
+            setzt die Hintergrundfarbe auf den rgb wert
+        background: red;
+        setzt den Hintergrund auf red
+
+    background-color | background setzen den Hintergrund vom value
+
+4. font-family:
+        font-family: helvetica, comic Sans
+            das Nutzer System geht durch die liste bis es auf eine Kompatible Schriftart findet,
+            setzt dann diese als schriftart
+            wenn im body, aller text wird geändert
+
+    setzt die Schriftart auf den value
+
+5. border-radius:
+        border-radius: 4px;
+            rundet die ecken um 4px ab
+        border-radius: 16px;
+            rundet die ecken um 16px ab
+
+    border-radius rundet die ecken um den value ab
+
+6. border:
+        border: none;
+            löscht den rand eines Knopfes
+
+7. margin:
+        margin: 20px;
+            setzt einen rand außerhalb des tags von 20px
+        margin: 40px 20px;
+            setzt einen rand außerhalb des tags oben und unten von 40px unnd rechts und links 20px
+           
+    margin macht einen rand um den inhalt des tags in der breite/höhe des value
+     (bei vier werten wie bei uhr, oben, rechts, unten, links)
+
+8. padding:
+        padding: 20px;
+            vergrößert den inhalts rand um 20px
+        padding: 40px 20px;
+            vergrößert den inhalt rand um 40px oben und unten, und rechts und links um 20px
+
+    padding erstellt platz und macht den tag um value größer
+    (bei vier werten wie bei uhr, oben, rechts, unten, links)
+
+9. display:
+        diplay: inline;
+            es wird in einer linie dargestelltdiplay:
+        flex;
+
+Nach CSS kam dann Javascript. Javascript sorgt dafür, dass auf der Webseite auch wirklich etwas passiert. Also z.B. wenn man einen Knopf auf der Webseite drückt, es die Hintergrundfarbe ändert. Javascript gefiel mir ganz gut es macht Sinn und ist Interressant, es ist trotzdem sehr schwer und ich hatte auch viele Probleme, allerdings ist es meine Lieblings Programmiersprache.
+Der Bauprozess war sehr spannend und lehrreich, bei welchem ich viel lernte. Es war sehr viel herumprobieren und sehen wie es mir gefällt und herausfinden. Ich hatte auch oft schwierige Momente, in welchen ich z.B. nicht herausfinden konnte, warum alles jetzt nicht mehr funktioniert. Solche Momente waren sehr frustrierend, aber im Endeffekt, hatte ich doch sehr viel Spaß.
