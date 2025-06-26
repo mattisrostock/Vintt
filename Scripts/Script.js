@@ -1,44 +1,68 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Alle a-Tags im Inhaltsverzeichnis holen
+document.addEventListener("DOMContentLoaded", function() {
+    // Dynamically set link text in the table of contents
     document.querySelectorAll('#JahresarbeitInhaltsangabe li a').forEach(function(a) {
-        // href="#ID" → ID extrahieren
         const id = a.getAttribute('href').replace('#', '');
-        // Wenn ein Element mit dieser ID existiert, setze den Text des Links auf die ID
         if (document.getElementById(id)) {
             a.textContent = id;
         }
     });
-});
 
-document.querySelectorAll("#JahresarbeitText > div > h1").forEach(h1 => {
-  const parentId = h1.parentElement.id;
-  h1.textContent = parentId;
-});
+    // Set h1 text content to parent element's ID
+    document.querySelectorAll("#JahresarbeitText > div > h1").forEach(h1 => {
+        const parentId = h1.parentElement.id;
+        h1.textContent = parentId;
+    });
 
-document.querySelectorAll("#JahresarbeitText > div > div > h2").forEach(h2 => {
-  const parentId = h2.parentElement.id;
-  h2.textContent = parentId;
-});
+    // Set h2 text content to parent element's ID
+    document.querySelectorAll("#JahresarbeitText > div > div > h2").forEach(h2 => {
+        const parentId = h2.parentElement.id;
+        h2.textContent = parentId;
+    });
 
-// Load text content for each section dynamically
-document.querySelectorAll('#JahresarbeitText div').forEach(section => {
-  const id = section.id;
-  const p = section.querySelector('p');
+    // Fetch and display text content for paragraphs
+    document.querySelectorAll("#JahresarbeitText div p").forEach(async p => {
+        const parentId = p.parentElement.id;
+        const filePath = p.parentElement.dataset.file;
+        try {
+            let response;
+            if (filePath) {
+                response = await fetch(`../Texts/${filePath}/${parentId}.txt`);
+            } else if (parentId) {
+                response = await fetch(`../Texts/${parentId}.txt`);
+            } else {
+                p.innerText = '[Kein Text verfügbar]';
+                return;
+            }
 
-  if (id && p) {
-    // Load corresponding .txt file
-    fetch(`../Texts/${id}.txt`)
-      .then(response => {
-        if (!response.ok) throw new Error(`Missing: ${id}.txt`);
-        return response.text();
-      })
-      .then(data => {
-        p.innerText = data;
-      })
-      .catch(err => {
-        console.warn(err);
-        p.innerText = '[Text nicht gefunden]';
-      });
-  }
+            if (response.ok) {
+                const data = await response.text();
+                p.innerText = data;
+            } else {
+                throw new Error('File not found');
+            }
+        } catch (err) {
+            console.warn(err);
+            p.innerText = '[Text nicht gefunden]';
+        }
+    });
+
+    // Color theme functionality
+    const buttons = document.querySelectorAll('.color-button');
+    const body = document.body;
+
+    const initialColor = '#36ba98';
+    body.style.backgroundColor = initialColor;
+    const initialButton = document.querySelector(`.color-button[data-color="${initialColor}"]`);
+    if (initialButton) {
+        initialButton.classList.add('active');
+    }
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            buttons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const newColor = button.dataset.color;
+            body.style.backgroundColor = newColor;
+        });
+    });
 });
-const filename = id.replace(/[^a-z0-9]/gi, '-');

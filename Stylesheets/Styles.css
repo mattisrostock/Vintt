@@ -1,48 +1,68 @@
+/* Global Reset */
+html,
 body {
-    background: white;
-    color: black;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    background-color: #36ba98;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     padding: 0;
 }
 
-/* Header */
+h1 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #17174d;
+}
 
+h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #17174d;
+}
+
+/* Header */
 header {
-    background-color: rgb(54, 186, 152);
-    height: 40%;
+    min-height: 200px;
     padding: 20px;
     text-align: center;
-}
-
-header a {
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-top: 40px;
-    color: rgb(250, 250, 250)
-}
-
-header a:hover {
-    text-decoration: underline;
-    text-decoration-color: rgb(250, 250, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 header .logo a {
     background-image: url(../Images/Logo/Text/Logo\ Text\ white.png);
     background-size: 100%;
     background-repeat: no-repeat;
-    display: inline-block;
-    height: 100px;
-    position: relative;
+    display: block;
+    height: 200px;
+    width: 600px;
     text-indent: -9999999999px;
-    top: -20px;
-    width: 300px;
-    
-
-
+    position: static;
 }
 
+header a {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 40px;
+    color: rgb(250, 250, 250);
+}
+
+/* Navigation */
 nav ul {
     margin: 0;
     padding: 0;
@@ -51,11 +71,10 @@ nav ul {
 
 nav li {
     display: inline;
-    margin: 0px 10px;
+    margin: 0 10px;
 }
 
-/* Text Formattierung */
-
+/* Text Formatting */
 #title {
     font-size: 1.24em;
     font-weight: bold;
@@ -71,48 +90,234 @@ nav li {
     text-align: center;
 }
 
-#text {
+#JahresarbeitText {
     font-size: 1em;
     margin: 0;
     padding: 0;
-    text-align: block;
 }
 
-/* Inhaltsangabe */
- ol {
+/* Links */
+a {
+    color: #17174d;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-decoration-color: #17174d;
+}
+
+/* List Styles */
+ol {
     counter-reset: item;
     list-style-type: none;
-  }
+}
 
-  ol > li {
+ol>li {
     counter-increment: item;
     margin-bottom: 0.5em;
     position: relative;
     padding-left: 2.5em;
-  }
+    font-weight: bold;
+}
 
-  ol > li::before {
+ol>li::before {
     content: counter(item) ". ";
     position: absolute;
     left: 0;
-  }
+}
 
-  /* Nested ol */
-  ol > li > ol {
+/* Nested Ordered List */
+ol>li>ol {
     counter-reset: subitem;
     margin-top: 0.5em;
     margin-left: 2em;
     padding-left: 0;
-  }
+    font-weight: normal;
+}
 
-  ol > li > ol > li {
+ol>li>ol>li {
     counter-increment: subitem;
     position: relative;
     padding-left: 3em;
-  }
+}
 
-  ol > li > ol > li::before {
+ol>li>ol>li::before {
     content: counter(item) "." counter(subitem) " ";
     position: absolute;
     left: 0;
-  }
+}
+
+/* Containers Styling */
+div#JahresarbeitInhaltsangabe,
+div#JahresarbeitText div,
+div#JahresarbeitTitle {
+    margin: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+div#JahresarbeitTitle {
+    text-align: center;
+    color: #17174d;
+}
+
+.color-options {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+
+.color-button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    /* Smooth transitions */
+}
+
+.color-button.active {
+    border-color: #fff;
+    border-width: 2px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+footer ul {
+    width: 90%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 0.9em;
+}
+
+footer ul li p {
+    color: rgb(74, 74, 74);
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li a {
+    color: rgb(74, 74, 74);
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+        height: auto;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #title,
+    #subtitle {
+        font-size: 1em;
+        padding: 5px;
+    }
+
+    #JahresarbeitText {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+
+    ol>li {
+        padding-left: 1.5em;
+    }
+
+    ol>li>ol>li {
+        padding-left: 2em;
+    }
+
+    h1 {
+        font-size: 1.1em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 610px) {
+    header {
+        padding: 0;
+        min-height: 250px;
+    }
+
+    header nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    header nav ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    header .logo {
+        width: 90%;
+        max-width: 450px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    header .logo a {
+        width: 100%;
+        height: 0;
+        padding-bottom: 28.27%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        display: block;
+        background-image: url(../Images/Logo/Text/Logo\ Text\ white.png) !important;
+    }
+
+    div#JahresarbeitTitle {
+        display: none;
+    }
+
+    #JahresarbeitText {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+
+    ol>li {
+        padding-left: 1.2em;
+        padding-right: 1.2em;
+        font-weight: normal;
+    }
+
+    ol>li>ol>li {
+        padding-left: 1.8em;
+        font-weight: normal;
+    }
+
+    ol li a {
+        padding-left: 1em;
+    }
+
+    h1 {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 0.9em;
+    }
+}

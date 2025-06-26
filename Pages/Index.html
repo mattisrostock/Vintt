@@ -6,24 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vintage Cassette Players</title>
     <link rel="stylesheet" href="../Stylesheets/Styles.css">
+    <script>
+        if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+            }
+    </script>
 </head>
 
 <body>
     <header>
         <nav>
             <ul>
-                <!-- <li class="desktop"><a href="">Mattis</a></li> -->
                 <li class="logo"><a href="Index.html">Vintage Cassette Players Logo</a></li>
-                <!-- <li class="desktop"><a href="">Jahresarbeit</a></li> -->
             </ul>
+            <div Id="JahresarbeitTitle">
+                <p id="title">Das Internet</p>
+                <p id="subtitle">Mattis Hermann</p>
+            </div>
         </nav>
     </header>
 
-    <div Id="JahresarbeitTitle">
-        <p id="title">Das Internet</p>
-        <p id="subtitle">Mattis Hermann</p>
+    <div class="color-options">
+                <button class="color-button" data-color="#36BA98" style="background-color: #36BA98;"></button>
+                <button class="color-button" data-color="#E9C46A" style="background-color: #E9C46A;"></button>
+                <button class="color-button" data-color="#F4A261" style="background-color: #F4A261;"></button>
+                <button class="color-button" data-color="#E76F51" style="background-color: #E76F51;"></button>
     </div>
-    <div Id="JahresarbeitInhaltsangabe">
+    
+    <div id="JahresarbeitInhaltsangabe">
         <ol>
             <li><a href="#Einleitung"></a></li>
             <li>
@@ -43,9 +53,9 @@
             <li><a href="#Zukunftsausblick"></a></li>
             <li><a href="#Wie das internet heute funktioniert"></a></li>
             <li>
-                <a href="#Meine Eigene Website: &#x201C Vintage Cassette Recorders &#x201C"></a>
+                <a href="#Meine Eigene Website: &#x201CVintage Cassette Recorders&#x201C"></a>
                 <ol>
-                    <li><a href="#Warum der Name?"></a></li>
+                    <li><a href="#Der Name"></a></li>
                     <li><a href="#Inhalt der Website"></a></li>
                     <li><a href="#Der Entstehungsprozess"></a></li>
                 </ol>
@@ -65,19 +75,19 @@
         <div id="Die Entstehung des Internets">
             <h1></h1>
             
-            <div id="Die ersten Ideen" data-file="">
+            <div id="Die ersten Ideen" data-file="Die Entstehung des Internets/">
                 <h2></h2>
                     <p></p>
             </div>
-            <div id="Das ARPANET">
+            <div id="Das ARPANET" data-file="Die Entstehung des Internets">
                 <h2></h2>
                     <p></p>
             </div>
-            <div id="Die Weiterentwicklung des ARPANET">
+            <div id="Die Weiterentwicklung des ARPANET" data-file="Die Entstehung des Internets">
                 <h2></h2>
                     <p></p>
             </div>
-            <div id="Vom ARPANET zum Internet">
+            <div id="Vom ARPANET zum Internet" data-file="Die Entstehung des Internets">
                 <h2></h2>
                     <p></p>
             </div>
@@ -112,18 +122,18 @@
             <h1></h1>
                 <p></p>
         </div>
-        <div id="Meine Eigene Website: &#x201C Vintage Cassette Recorders &#x201C">
+        <div id="Meine Eigene Website: &#x201CVintage Cassette Recorders&#x201C">
             <h1></h1>
             
-            <div id="Warum der Name?">
+            <div id="Der Name" data-file="Meine Eigene Website">
                 <h2></h2>
                     <p></p>
             </div>
-            <div id="Inhalt der Website">
+            <div id="Inhalt der Website" data-file="Meine Eigene Website">
                 <h2></h2>
                     <p></p>
             </div>
-            <div id="Der Entstehungsprozess">
+            <div id="Der Entstehungsprozess" data-file="Meine Eigene Website">
                 <h2></h2>
                     <p></p>
             </div>
@@ -133,10 +143,22 @@
             <h1></h1>
                 <p></p>
         </div>
-
     </div>
 
+    <footer>
+        <ul>
+            <li><p>Mattis Hermann</p></li>
+            <li><p>Waldorfschule Rostock</p></li>
+            <li><a href="https://www.instagram.com/mattis.rostock.asfc/">Instagram</a></li>
+        </ul>
+    </footer>
+
     <script type="text/javascript" src="../Scripts/Script.js" script>
+    </script>
+    <script>
+    window.onload = function() {
+    window.scrollTo(0, 0);
+        };
     </script>
 
 </body>
