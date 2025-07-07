@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Color theme functionality
     const buttons = document.querySelectorAll('.color-button');
-    const body = document.body;
+    const html = document.documentElement;
 
     const initialColor = '#36ba98';
-    body.style.backgroundColor = initialColor;
+    html.style.backgroundColor = initialColor;
     const initialButton = document.querySelector(`.color-button[data-color="${initialColor}"]`);
     if (initialButton) {
         initialButton.classList.add('active');
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             buttons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             const newColor = button.dataset.color;
-            body.style.backgroundColor = newColor;
+            html.style.backgroundColor = newColor;
         });
     });
 });
